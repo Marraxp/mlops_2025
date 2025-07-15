@@ -1,12 +1,19 @@
-# App para MLOps
+# API para MLOps
 
-[![GitHub license](https://img.shields.io/github/license/Thinklab-SJTU/Awesome-LLM4AD)](https://github.com/Thinklab-SJTU/Awesome-LLM4AD/blob/main/LICENSE)
+[![Github License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
 
 Esta es una aplicacion que predice dado unos indicadores de salud, si debe ir o no al doctor a revisarse.
 
 La App está distribuida por el siguiente repositorio: https://github.com/madxerax/mlops_2025
 
-La finalidad de esta entrega es hacer el flujo de MLOps, por lo cual no andaremos en gran detalle en la App, pero si en el flujo que se realizó para desplegar y disponibilizar la API.
+La finalidad de esta entrega es hacer el flujo de MLOps, por lo cual no ahondaremos en gran detalle en la App, pero si en el flujo que se realizó para desplegar y disponibilizar la API.
+
+Este trabajo es parte del entregable del curso de MLOps Sec.2 - 2025 del [Magister en Data Science](https://www.uai.cl/postgrados/magisteres/magister-en-data-science) de la Universidad Adolfo Ibañez.
+    ![UAI Logo](./img/UAILogo.png)
+
+- Profesor: [Ahmad Armoush](https://www.uai.cl/profesores/ingenieria-y-ciencias/ahmad-armoush)
+- Alumno: [Mariano González Núñez](https://www.linkedin.com/in/marianogn/)
+
 
 ## Tabla de Contenidos
 
@@ -18,35 +25,36 @@ La finalidad de esta entrega es hacer el flujo de MLOps, por lo cual no andaremo
     - [Test](#test)
     - [Prod](#prod)
   - [Anexos](#anexos)
-    - [Dockerfile](#dockerfile)
     - [K8s Deploy](#k8s-deploy)
 
 ## Descripción General Uso App
 
 La App esta diseñada con FastAPI en Python.
 
-La API se levanta en el puerto 8080 e importante para entrar a ella se debe usar un GET request a /predict con un json como el siguiente, señalando la edad y los valores médicos necesarios para predecir.
+La API se levanta en el puerto 8080 e importante para entrar a ella se debe usar un GET request a /predict con un json request, señalando la edad y los valores médicos necesarios para predecir.
 
 ```json
-new_data = {'Age': 68,
-            'RestingBP': 150,
-            'Cholesterol': 195,
-            'Oldpeak': 0.0,
-            'FastingBS': 1,
-            'MaxHR': 132,
-            }
+{
+    'Age': 68,
+    'Cholesterol': 195,
+    'Oldpeak': 0.0,
+    'FastingBS': 1,
+    'RestingBP': 150,
+    'MaxHR': 132,
+}
 ```
 
 ## Arquitectura
 
-Se utilizo la Arquitectura de GitHub > GCP en CloudRun > Kubernetes corriendo la API.
+Se utilizó la Arquitectura de GitHub > GCP en CloudRun > Kubernetes corriendo la API.
 
-![Arquitectura Solucion](./img/Architecture.png)
+![Arquitectura Solucion](./img/ArquitecturaMLOps.drawio.png)
 
 ## Deploy
 
 - La App fue provista junto a todos los archivos necesarios para correrla.
 - Se generó un Dockerfile que permite levantar la App.py con Python 3.10 y sus respectivos paquetes contenidos en un requirements.txt en el puerto 8080 con uvicorn.
+
 
 ### Test
 
@@ -68,6 +76,7 @@ Se utilizo la Arquitectura de GitHub > GCP en CloudRun > Kubernetes corriendo la
 
   ![Ejemplo Response en Localhost](./img/ResponseFastApi.png)
 
+
 ### Prod
 
 - Se generó un Cloud Run en GCP, donde se levanto el repositorio de GitHub y la App con la siguiente ruta:
@@ -85,11 +94,10 @@ Se utilizo la Arquitectura de GitHub > GCP en CloudRun > Kubernetes corriendo la
 
   ![Logs Cloud Run en GCP](./img/GCPCloudRunLog.png)
 
+
 ## Anexos
 
-### Dockerfile
-
-### K8s Deploy
+### K8s Deploy GCP
 
 - Se deja el Deploy de Kubernetes que dejo CloudRun para la API.
 
@@ -183,3 +191,4 @@ status:
   address:
     url: https://mlops-2025-d5rjrjg47q-tl.a.run.app
 ```
+
