@@ -10,7 +10,7 @@ La finalidad de esta entrega es hacer el flujo de MLOps, por lo cual no ahondare
 
 Este trabajo es parte del entregable del curso de MLOps Sec.2 - 2025 del [Magister en Data Science](https://www.uai.cl/postgrados/magisteres/magister-en-data-science) de la Universidad Adolfo Ibañez.
 
-    ![UAI Logo](./img/UAILogo.png)
+![UAI Logo](./img/UAILogo.png)
 
 - Profesor: [Ahmad Armoush](https://www.uai.cl/profesores/ingenieria-y-ciencias/ahmad-armoush)
 - Alumno: [Mariano González Núñez](https://www.linkedin.com/in/marianogn/)
