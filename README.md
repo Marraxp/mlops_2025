@@ -1,2 +1,3 @@
 # mlops_2025
-Tarea MLOps 2025 - Magister Data Science 
+Modelo de ML con flujo operacional y deploy en prod.
+Sin cambio
