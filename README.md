@@ -81,7 +81,7 @@ Se utilizó la Arquitectura de GitHub > GCP en CloudRun > Kubernetes corriendo l
 ### Prod
 
 - Se generó un Cloud Run en GCP, donde se levanto el repositorio de GitHub y la App con la siguiente ruta:
-  [API en GCP](https://mlops-2025-201939390881.southamerica-west1.run.app).
+  [API en GCP](https://mlops-2025-201939390881.us-central1.run.app/docs).
 
   ![Deploy en GCP del Repositorio con Docker](./img/GCPCloudRun.png)
 - Luego de compilar, se procedió a probar la API en el navegador
