@@ -100,6 +100,7 @@ Se utilizó la Arquitectura de GitHub > GCP en CloudRun > Kubernetes corriendo l
 
 ### K8s Deploy GCP
 
+
 - Se deja el Deploy de Kubernetes que dejo CloudRun para la API.
 
 ```yaml
